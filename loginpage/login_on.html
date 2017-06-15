@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=1300">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>SeieS平台登录丨DiOne杭州店湾科技有限公司</title>
+	<meta name="keywords" content="DiOne，SeieS,Iot,AI,店+,店加,店湾,杭州店湾,开发者中心,作业平台,集成平台,配置平台,管控平台">
+	<link href="auth.css" rel="stylesheet">
+	<script src="jquery.min.js" type="application/javascript"></script>
+
+	<!--[if lte IE 8]><script src="ie6-warning.js" type="application/javascript"></script><![endif]-->
+
+	</head>
+	<body style="background:#313b4c">
+		<section class="auth_box">
+			<div class="auth_warp">
+				<div class="login_animate" style="height: 520px;">
+					<h3>统一登录系统</h3>
+					<form class="login">
+					<div class="line">
+						  <input type="email" placeholder="请输入用户名">
+						</div>
+					<div class="line">
+						  <input type="password" placeholder="请输入密码">
+						</div>
+					<button id="submit" type="submit">登录</button>
+				  </form>
+				</div>
+			  </div>
+			  <div id="textbg">
+			<div class="box1"><img src="login.png"></div>
+		  </div>
+		</section>
+		
+		<script>
+			$(document).ready(function(){
+			  var oul = $('#textbg .box1');
+			  var oulHtml = oul.html();
+			  oul.html(oulHtml+oulHtml);
+			  var ali = $('.box1 img');
+			  $('#textbg .box1>img').css('width',window.innerWidth);
+			  var ttt = -(window.innerWidth*192/1280/2);
+			  $('#textbg').css({'height':window.innerWidth*192/1280,'marginTop':ttt+'px'});
+			  var aliWidth = $('#textbg .box1>img').eq(1).width();
+			  //- var aliWidth = window.innerWidth;
+			  var ulWidth = aliWidth*ali.size();
+			  oul.width(ulWidth);
+			  var speed = 2;
+			  function slider(){
+				if(speed<0){
+				  if(oul.css('left')==-ulWidth/2+'px'){
+				  oul.css('left',0);
+				  }
+				  oul.css('left','+=-2px');
+				}
+				if(speed>0){
+				  if(oul.css('left')=='0px'){
+				  oul.css('left',-ulWidth/2+'px');
+				  }
+				  oul.css('left','+='+speed+'px');
+				}
+			  }
+			  var timeId = setInterval(slider,30);
+
+			});
+		</script>
+	</body>
+</html>
